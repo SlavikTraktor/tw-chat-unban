@@ -1,0 +1,17 @@
+{
+    "name": "Getting Started Example",
+    "version": "1.0",
+    "description": "Build an Extension!",
+    "permissions": ["storage", "activeTab"],
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://*.twitch.tv/*"],
+          "js": ["contentScript.js"]
+        }
+      ]
+  }
