@@ -2,7 +2,7 @@ document.body.style.backgroundColor = "#000000";
 
 setTimeout(() => {
   const kek = document.getElementsByClassName("chat-room__content")[0];
-  kek.setAttribute("style", "display:none");
+  kek.setAttribute("style", "display:none!important");
 
   const newChat = document.createElement("div");
   newChat.setAttribute(
