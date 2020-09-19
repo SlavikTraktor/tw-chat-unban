@@ -26,7 +26,26 @@ const cors = require("cors");
     res.send(chatContent);
   });
 
-  app.listen(3000, function () {
+  app.ws('/:nickname', async (ws, req) => {
+
+    console.log(req.params);
+
+    const intervalId = setInterval(async () => {
+      const content = await page.content();
+
+      const $ = cheerio.load(content);
+      const chatContent = $(".chat-room__content").html();
+
+      ws.send(chatContent);
+    }, 2000);
+
+    ws.on('close', () => {
+      clearInterval(intervalId);
+      console.log(`${intervalId} cleared`);
+    });
+  })
+
+  app.listen(3000, () => {
     console.log("Started, port: 3000");
   });
 })();
