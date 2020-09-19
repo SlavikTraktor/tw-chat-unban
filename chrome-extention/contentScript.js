@@ -16,6 +16,8 @@ setTimeout(async () => {
 
     ws.onmessage = (event) => {
       newChat.innerHTML = event.data;
+      const scrollableChat =  newChat.getElementsByClassName("simplebar-scroll-content")[0];
+      scrollableChat.scrollTop = scrollableChat.scrollHeight;
     };
   } catch (e) {}
 

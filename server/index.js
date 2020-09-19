@@ -11,7 +11,7 @@ const cors = require("cors");
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto("https://www.twitch.tv/popout/blackufa/chat");
+  await page.goto("https://www.twitch.tv/popout/ybicanoooobov/chat");
 
   app.use(cors());
 
